@@ -1,7 +1,5 @@
 import http.server
-import socketserver
 
-# Specify the IP address and port to listen on
 host = '0.0.0.0'  # Listen on all available network interfaces
 port = 8000
 
@@ -15,6 +13,8 @@ class ExampleServer(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(f'Client IP: {client_ip}\n'.encode('utf-8'))
 
-with socketserver.TCPServer((host, port), ExampleServer) as httpd:
-    print(f"Serving at http://{host}:{port}")
-    httpd.serve_forever()
+# Create and start the server
+server_address = (host, port)
+httpd = http.server.HTTPServer(server_address, ExampleServer)
+print(f"Serving at http://localhost:{port}")
+httpd.serve_forever()
