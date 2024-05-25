@@ -1,7 +1,7 @@
 Repo with example code presented in ThaiPy97  
 
 
-Meetup link:
+Meetup link:  
 https://www.meetup.com/thaipy-bangkok-python-meetup/events/295548540/  
 
 Youtube video link:  
